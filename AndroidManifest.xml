@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.octopus.demo"
+    android:versionCode="1"
+    android:versionName="1.0" >
+	<!-- 调用百度地图必须保证,应用的包名和AK是本地电脑申请的才行,否则MapView只会显示网格 -->
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="21" />
+	<!-- 百度API所需权限 -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />  
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />  
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />  
+    <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS" />  
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />  
+    <uses-permission android:name="android.permission.INTERNET" />  
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />  
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />  
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />  
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />  
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />  
+    <uses-permission android:name="android.permission.BROADCAST_STICKY" />  
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />  
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" 
+        android:name="com.hisign.demo.app.MyApplication"
+        >
+       	<!-- 百度地图权限 秘钥 -->
+        <meta-data 
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="zG01srwVqRSYz36Elki4Gd1xOGrRrSxT"
+            />
+        <activity
+            android:name="com.hisign.demo.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
