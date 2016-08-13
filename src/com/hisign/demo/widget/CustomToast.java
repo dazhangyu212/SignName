@@ -23,7 +23,6 @@ public class CustomToast {
 	
 	/**
 	 * ¶ÌtoastÌáÊ¾
-	 * 
 	 * @param context
 	 * @param msg
 	 */
