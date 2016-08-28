@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    <include 
+        android:id="@+id/dialog_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        layout = "@layout/dialog_title_bar"
+        />
+    <TimePicker 
+        android:id="@+id/timepicker_sign_in"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/n15dp"
+        android:layout_marginBottom="@dimen/n15dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/dialog_title"
+        />
+	<include 
+	    android:layout_below="@id/timepicker_sign_in"
+	    layout = "@layout/dialog_bottom_bar"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    />
+	
+</RelativeLayout>

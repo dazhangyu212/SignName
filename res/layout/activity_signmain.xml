@@ -3,9 +3,77 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
     
-	<TextView 
-	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
-	    android:text="@string/hello_world"
+	<include 
+	    android:id="@+id/include_title"
+	    android:layout_width="match_parent"
+	    android:layout_height="@dimen/n48dp"
+	    layout = "@layout/activity_title_bar"
 	    />
+	<RelativeLayout 
+	    android:id="@+id/rlt_content"
+	    android:layout_width="match_parent"
+	    android:layout_height="@dimen/n100dp"
+	    android:layout_below="@id/include_title"
+	    >
+	    <TextView 
+	        android:id="@+id/tv_today_signin"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:textSize="@dimen/n20sp"
+	        android:textColor="@color/col_black"
+	        android:text="today"
+	        android:layout_centerHorizontal="true"
+	        android:layout_marginTop="@dimen/n10dp"
+	        />
+	    <Button 
+	        android:id="@+id/btn_sign_in_now"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_marginLeft="@dimen/n20dp"
+	        android:layout_marginRight="@dimen/n20dp"
+	        android:layout_marginTop="@dimen/n10dp"
+	        android:layout_marginBottom="@dimen/n10dp"
+	        android:text="@string/str_sing_in"
+	        android:background="@drawable/shape_btn_round_conner"
+	        android:layout_centerHorizontal="true"
+	        android:layout_below="@id/tv_today_signin"
+	        
+	        />
+	    <Button 
+	        android:id="@+id/btn_sign_in_type"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_marginLeft="@dimen/n20dp"
+	        android:layout_marginRight="@dimen/n20dp"
+	        android:layout_marginTop="@dimen/n10dp"
+	        android:layout_marginBottom="@dimen/n10dp"
+	        android:text="@string/str_sing_in_content"
+	        android:background="@drawable/shape_btn_round_conner"
+	        android:layout_centerHorizontal="true"
+	        android:layout_below="@id/tv_today_signin"
+	        android:layout_toLeftOf="@id/btn_sign_in_now"
+	        
+	        />
+	    <Button 
+	        android:id="@+id/btn_sign_in_save"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_marginLeft="@dimen/n20dp"
+	        android:layout_marginRight="@dimen/n20dp"
+	        android:layout_marginTop="@dimen/n10dp"
+	        android:layout_marginBottom="@dimen/n10dp"
+	        android:text="@string/str_confrim"
+	        android:background="@drawable/shape_btn_round_conner"
+	        android:layout_centerHorizontal="true"
+	        android:layout_below="@id/tv_today_signin"
+	        android:layout_toRightOf="@id/btn_sign_in_now"
+	        
+	        />
+	</RelativeLayout>
+	<ListView 
+	    android:id="@+id/lv_signin_records"
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:layout_below="@id/rlt_content"
+	    ></ListView>
 </RelativeLayout>

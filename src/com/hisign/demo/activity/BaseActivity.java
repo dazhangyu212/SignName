@@ -12,8 +12,7 @@ import android.content.IntentFilter;
  */
 public class BaseActivity extends Activity {
 	/** 
-     * ¹Ø±ÕActivityµÄ¹ã²¥£¬·ÅÔÚ×Ô¶¨ÒåµÄ»ùÀàÖĞ£¬ÈÃÆäËûµÄActivity¼Ì³ĞÕâ¸öActivity¾ÍĞĞ 
-     * Ö÷ActivityÍË³öÊ±,ËùÓĞµÄActivityÈ«²¿ÍË³ö
+     * é€€å‡ºç¨‹åº
      */
 	protected BroadcastReceiver finishAppReceiver = new BroadcastReceiver(){
 		public void onReceive(android.content.Context context, android.content.Intent intent) {
@@ -24,7 +23,7 @@ public class BaseActivity extends Activity {
 	
 	protected void onResume() {
 		super.onResume();
-		// ÔÚµ±Ç°µÄactivityÖĞ×¢²á¹ã²¥
+		// æ¥å—æ¶ˆæ¯
 		IntentFilter filter= new IntentFilter();
 		filter.addAction("com.octopus.demo");
 		this.registerReceiver(this.finishAppReceiver, filter);

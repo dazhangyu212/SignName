@@ -1,10 +1,15 @@
 package com.hisign.demo.activity;
 
+import com.hisign.demo.event.DialogInterface;
+import com.hisign.demo.fragment.SignInTimeDialogFragment;
 import com.octopus.demo.R;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.KeyEvent;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.TextView;
 import android.widget.Toast;
 
 /**
@@ -13,15 +18,26 @@ import android.widget.Toast;
  * @description 
  *
  */
-public class SignMainActivity extends BaseActivity {
+public class SignMainActivity extends BaseActivity implements OnClickListener{
+	
+	private TextView tvSigninTime;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_signmain);
+		initView();
 	}
 	
+	private void initView() {
+		findViewById(R.id.btn_sign_in_save).setOnClickListener(this);
+		findViewById(R.id.btn_sign_in_now).setOnClickListener(this);
+		findViewById(R.id.btn_sign_in_type).setOnClickListener(this);
+		tvSigninTime = (TextView) findViewById(R.id.tv_today_signin);
+	}
+
 	/**
-	 * ¼ÇÂ¼µã»÷ÍË³ö°´Å¥µÄÊ±¼ä
+	 * é€€å‡ºæ ‡è®°æ—¶é—´
 	 */
 	private long exitTime = 0;
 	
@@ -41,11 +57,47 @@ public class SignMainActivity extends BaseActivity {
 	}
 	
 	/** 
-     * ÍË³öÓ¦ÓÃ³ÌÐòµÄ·½·¨£¬·¢ËÍÍË³ö³ÌÐòµÄ¹ã²¥ 
+     * é€€å‡º
      */  
     private void exitApp() {  
         Intent intent = new Intent();  
-        intent.setAction("com.stone.ordering");  
+        intent.setAction("com.octopus.demo");  
         this.sendBroadcast(intent);  
-    }  
+    }
+
+	@Override
+	public void onClick(View v) {
+		switch (v.getId()) {
+		case R.id.btn_sign_in_now:
+			SignInTimeDialogFragment signinFragment = new SignInTimeDialogFragment();
+			signinFragment.setClickEvent(new DialogInterface() {
+				
+				@Override
+				public void onDismiss() {
+					
+				}
+				
+				@Override
+				public void onConfirm() {
+					tvSigninTime.setText(signinFragment.);
+				}
+				
+				@Override
+				public void onCancel() {
+					// TODO Auto-generated method stub
+					
+				}
+			});
+			signinFragment.show(this.getFragmentManager().beginTransaction(), "Sign in");
+			break;
+		case R.id.btn_sign_in_save:
+			
+			break;
+		case R.id.btn_sign_in_type:
+			
+			break;
+		default:
+			break;
+		}
+	}  
 }

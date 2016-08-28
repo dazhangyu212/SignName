@@ -3,6 +3,9 @@
 
     <string name="app_name">TestMap</string>
     <string name="hello_world">Hello world!</string>
-    <string name= "str_exit_app"></string>
-
+    <string name= "str_exit_app">退出应用</string>
+	<string name="str_confrim">确定</string>
+	<string name="str_cancel">取消</string>
+	<string name="str_sing_in">签到</string>
+	<string name="str_sing_in_content">类型</string>
 </resources>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android" >
+    <solid android:color="@color/col_blue" >
+        <!-- 背景色 -->
+    </solid>
+	<corners android:radius="@dimen/n10dp">
+	    <!-- 弯角10dp半径 -->
+	</corners>
+	<padding android:left="@dimen/n5dp" android:top="@dimen/n5dp" android:right="@dimen/n5dp" android:bottom="@dimen/n5dp"/>
+	<stroke android:width="@dimen/n1dp"/>
+</shape>
